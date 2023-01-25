@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "projeto para estudo backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willcrvlh/cursos.git"
+  },
+  "keywords": [
+    "api",
+    "js",
+    "backend"
+  ],
+  "author": "Willcrvlh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willcrvlh/cursos/issues"
+  },
+  "homepage": "https://github.com/willcrvlh/cursos#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },"type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
