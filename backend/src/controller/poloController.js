@@ -11,22 +11,6 @@ const poloController = app =>{
             })
         }
     })
-    app.get('/polo/:id', async (req,res)=>{
-        const id = req.params.id
-        if (!poloModel) {
-            return res.status(422).json({ 
-                "error" : "polo não encontrado"
-            })
-        }
-        try{
-            const polo = await poloModel.find({_id: id})
-            res.status(200).json({polo})
-        }catch(e){
-            res.status(400).json({
-                "erro" : e
-            })
-        }
-    })
 
     app.post('/polo',async (req,res)=>{
         await poloModel.create(req.body)
