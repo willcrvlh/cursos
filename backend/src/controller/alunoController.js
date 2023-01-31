@@ -2,6 +2,7 @@ import alunoModel from "../model/alunoModel.js";
 
 const alunoController = app =>{
     app.get('/aluno', async (req,res)=>{
+        
         try {
             const aluno = await alunoModel.findAll();
             res.status(200).json(aluno)
@@ -19,6 +20,7 @@ const alunoController = app =>{
             res.status(422).json({
                 "error":"Aluno não existe"
             })
+            return;
         }
         try {
             const aluno = await alunoModel.findByPk(matricula);
@@ -46,7 +48,7 @@ const alunoController = app =>{
     app.delete('/aluno/:matricula',async  (req, res)=>{
         const matricula = req.params.matricula
         const aluno = await alunoModel.destroy({where : {matricula: matricula}})
-        if(!aluno){
+        if(!alunoModel){
             res.status(422).json({
                 "erro" : "Aluno não encontrado"
             })
@@ -63,6 +65,12 @@ const alunoController = app =>{
                 "erro": "deu merda em algo"
             })
         }
+    })
+
+    app.patch('/aluno/:matricula',async (req,res)=>{
+        const matricula = req.params.matricula
+        const alunoUpdate =  await alunoModel.findByPk({where: {matricula: matricula}})
+        
     })
 }
 
