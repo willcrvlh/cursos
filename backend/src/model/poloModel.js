@@ -6,7 +6,8 @@ const poloModel = db.define('Polo',{
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull:false,
-        primaryKey: true
+        primaryKey: true,
+        foreignKey: true
     },
     localizacao:{
         type: Sequelize.STRING,
